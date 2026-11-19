@@ -4,6 +4,7 @@ set -u
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 VENV="${AVE_VENV:-$ROOT/.venv}"
 CUT="$ROOT/.claude/skills/cut/scripts"
+CAP="$ROOT/.claude/skills/captions/scripts"
 STY="$ROOT/.claude/skills/style/scripts"
 TMP="$(mktemp -d)"
 cleanup() { command -v trash >/dev/null && trash "$TMP" 2>/dev/null; return 0; }
@@ -120,11 +121,11 @@ fi
 echo '[{"text":"this changes","start":0,"end":0.5},{"text":"everything now","start":0.5,"end":1.0},{"text":"go","start":1.0,"end":1.4}]' > "$TMP/cap_ok.json"
 echo '[{"text":"this changes","start":0,"end":0.5},{"text":"everything now","start":0.4,"end":1.0}]' > "$TMP/cap_bad.json"
 echo '[{"text":"this is too many words","start":0,"end":1}]' > "$TMP/cap_bad2.json"
-expect "check_captions pass" 0 "$PY" "$STY/check_captions.py" "$TMP/cap_ok.json" --fps 30
-expect "check_captions fails on overlap (4 words)" 1 "$PY" "$STY/check_captions.py" "$TMP/cap_bad.json"
-expect "check_captions fails on 5 words" 1 "$PY" "$STY/check_captions.py" "$TMP/cap_bad2.json"
+expect "check_captions pass" 0 "$PY" "$CAP/check_captions.py" "$TMP/cap_ok.json" --fps 30
+expect "check_captions fails on overlap (4 words)" 1 "$PY" "$CAP/check_captions.py" "$TMP/cap_bad.json"
+expect "check_captions fails on 5 words" 1 "$PY" "$CAP/check_captions.py" "$TMP/cap_bad2.json"
 echo '[{"word":"this","start":0,"end":0.2},{"word":"changes","start":0.2,"end":0.5},{"word":"really","start":0.5,"end":0.7},{"word":"everything","start":0.7,"end":0.9},{"word":"now","start":0.9,"end":1},{"word":"go","start":1,"end":1.3}]' > "$TMP/w2.json"
-expect "check_captions --words" 0 "$PY" "$STY/check_captions.py" "$TMP/cap_ok.json" --words "$TMP/w2.json"
+expect "check_captions --words" 0 "$PY" "$CAP/check_captions.py" "$TMP/cap_ok.json" --words "$TMP/w2.json"
 grep -q "dropped words" "$TMP/out.txt" && ok "check_captions reports dropped word" || bad "dropped word not reported"
 
 # 6b. make_captions: word timings -> house-style cues that pass check_captions with every word kept
@@ -137,8 +138,8 @@ for w in txt.split():
 json.dump(ws, open(sys.argv[1] + "/w3.json", "w"))
 json.dump({"segments": [[0, "IN_BIG"], [90, "IN_SMALL"], [200, "OUT"]]}, open(sys.argv[1] + "/modes3.json", "w"))
 PYEOF
-expect "make_captions writes cues" 0 "$PY" "$STY/make_captions.py" "$TMP/w3.json" --out "$TMP/cap3.json" --srt "$TMP/cap3.srt" --modes "$TMP/modes3.json"
-expect "make_captions output passes check_captions with every word" 0 "$PY" "$STY/check_captions.py" "$TMP/cap3.json" --words "$TMP/w3.json" --strict-words
+expect "make_captions writes cues" 0 "$PY" "$CAP/make_captions.py" "$TMP/w3.json" --out "$TMP/cap3.json" --srt "$TMP/cap3.srt" --modes "$TMP/modes3.json"
+expect "make_captions output passes check_captions with every word" 0 "$PY" "$CAP/check_captions.py" "$TMP/cap3.json" --words "$TMP/w3.json" --strict-words
 "$PY" -c "import json,sys; c=json.load(open(sys.argv[1])); assert c[0]['y']==962 and c[-1]['y']==1489 and max(x['words'] for x in c)<=3" "$TMP/cap3.json" && ok "caption positions follow the mode, max 3 words" || bad "caption positions or word count wrong"
 [ -s "$TMP/cap3.srt" ] && ok "srt written" || bad "srt missing"
 

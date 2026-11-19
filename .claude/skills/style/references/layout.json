@@ -51,11 +51,11 @@
       "note": "Optional opening visual hook. Background, graphics and captions stay fixed." }
   },
   "captions": {
-    "font": "Departure Mono Regular (SIL Open Font License)",
+    "defaultFont": "Departure Mono (free, SIL Open Font License); any font works",
+    "defaultPx": 40,
     "color": "#FFFFFF",
-    "effectivePx": 38.5,
     "maxWordsVisible": 3,
-    "background": "none", "border": "none", "stroke": "none", "shadow": "none",
-    "followsCameraZoom": false
+    "followsCameraZoom": false,
+    "note": "One font and one size for the whole video. Only the position changes per mode."
   }
 }

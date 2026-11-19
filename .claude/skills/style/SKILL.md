@@ -1,11 +1,11 @@
 ---
 name: style
-description: "Keep a talking-head Reel's layout and captions the same every time. Codes every line into four modes (IN BIG, IN SMALL, OUT, FULL), places the speaker and graphics by exact pixels, adds the slow zooms, and applies short white captions with never more than three words on screen. Use after the cut and before or alongside motion graphics."
+description: "Keep a talking-head Reel's layout the same every time. Codes every line into four modes (IN BIG, IN SMALL, OUT, FULL), places the speaker and graphics by exact pixels and adds the slow zooms. Captions are the separate captions skill. Use after the cut and before or alongside motion graphics."
 ---
 
-# Style: layout and captions
+# Style: layout
 
-This skill is the house look. It decides where the speaker sits, where graphics go, how captions look and when the layout switches. It exists because an AI left to itself crams long captions across the screen, keeps the speaker in one box for the whole video and puts text where the phone crops it off. Every number lives in `references/layout.json`. Read it before placing anything.
+This skill is the house look. It decides where the speaker sits, where graphics go and when the layout switches. It exists because an AI left to itself keeps the speaker in one box for the whole video and puts text where the phone crops it off. Every number lives in `references/layout.json`. Read it before placing anything.
 
 All work is on a native **1080x1920** canvas.
 
@@ -89,33 +89,7 @@ Classify every used segment, and every visible frame including transitions, by w
 
 ## Step 5: captions
 
-The locked caption style:
-
-- **Departure Mono Regular**, white, **38.5 px** effective in every mode (55 px at 0.7 scale; never shrink again). Free under the SIL Open Font License; download it from its official site if it isn't installed.
-- **No background, border, stroke or shadow.** All white, including names and emphasis words.
-- **Two to three words on screen, never more than three visible at once in the whole frame.** That's a screen total, not per line, so outgoing and incoming cues can't overlap into four. Two long words together get a screen of their own. One word alone is fine for emphasis, a name or a natural remainder.
-- **Position:** IN SMALL one line centred at (540,1262), just above the head. IN BIG at (540,962), in the faded seam. OUT, FULL and the call to action at (540,1489).
-- Never drop, duplicate or paraphrase a spoken word. Never shrink the font to make a phrase fit; split it at a natural spoken boundary instead.
-- **Captions never follow a camera zoom.** They sit on their own layer so their size never drifts.
-- Time every cue to the word timings of the actual cut. Re-time after every cut change.
-
-Make them from the word timings of the final cut (after every cut change, re-time the words first):
-
-```bash
-.venv/bin/python .claude/skills/style/scripts/make_captions.py words.json --out captions.json --modes modes.json --srt captions.srt
-```
-
-It splits each spoken phrase into the fewest, most even screens of two or three words, breaking at sentence ends, commas and real pauses, gives a crowded three-word screen an extra screen, keeps every word exactly once, and places each cue by the layout mode it starts in. The `.srt` is for anyone finishing in another editor.
-
-Render them with `references/Captions.tsx`: copy it into the Remotion project, put `<Captions captions={captions} />` as the top layer of the edit, outside every zoomed or scaled container. The font goes in `remotion/public/fonts/DepartureMono-Regular.woff2`.
-
-Check before showing anyone:
-
-```bash
-.venv/bin/python .claude/skills/style/scripts/check_captions.py captions.json --words words.json
-```
-
-Then look at encoded frames at phone size: the first caption, both modes, every transition, the longest phrase, and every place a caption could touch hair, a hand or a graphic. Captions stay above the highest moving hair and below the lowest important graphic across the whole camera path, not just in one still.
+Captions have their own skill: `captions`. It uses the mode positions from `references/layout.json`, so code the modes first.
 
 ## Step 6: place graphics in the modes
 
@@ -148,6 +122,6 @@ It must pass (exit 0). Then watch the encoded file at phone size. A passing scri
 
 - The coverage map is approved before anything is built.
 - Hook on IN BIG, looking up. Two in a row, never three. Never two OUT in a row. OUT 3 to 4 times. FULL only on a real transition, 4 seconds max.
-- Captions: Departure Mono, white, 38.5 px, no box, max three words visible, never follow a zoom.
+- Captions follow the captions skill, at the positions in `layout.json`.
 - Every readable thing inside x120 to 960.
 - Never overwrite an accepted version. Every change is a new numbered version.

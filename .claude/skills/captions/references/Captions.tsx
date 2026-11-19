@@ -1,14 +1,15 @@
-// Captions layer for Remotion, in the house style.
+// Captions layer for Remotion.
 // Copy into remotion/src/ and render it as the TOP layer of the edit, outside any zoomed or
 // scaled container, so captions never follow a camera zoom and their size never drifts.
 //
 //   import captions from './captions.json';   // written by make_captions.py
 //   <Captions captions={captions} />
 //
-// Style (locked): Departure Mono Regular, white, 38.5 px effective (55 px at 0.7), one line,
-// no background, border, stroke or shadow. Position per cue comes from captions.json
-// (IN SMALL 540,1262 / IN BIG 540,962 / OUT and FULL 540,1489). Font file expected at
-// remotion/public/fonts/DepartureMono-Regular.woff2 (or .otf: change FONT_FILE).
+// Default look: Departure Mono (a free digital-style font), white, one line, no box.
+// Swap the font by changing FONT_FILE and FONT_NAME; change the size with FONT_PX.
+// Keep one font and one size for the whole video: only the position changes per layout.
+// Position per cue comes from captions.json (IN SMALL 540,1262 / IN BIG 540,962 /
+// OUT and FULL 540,1489).
 
 import React from 'react';
 import {AbsoluteFill, continueRender, delayRender, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
@@ -17,8 +18,7 @@ export type Caption = {text: string; start: number; end: number; x: number; y: n
 
 const FONT_FILE = 'fonts/DepartureMono-Regular.woff2';
 const FONT_NAME = 'Departure Mono';
-const BASE_PX = 55;
-const SCALE = 0.7; // 38.5 px effective. Never shrink again to make a phrase fit: split it instead.
+const FONT_PX = 40; // one size for the whole video. Never shrink a phrase to fit: split it instead.
 const BAND_HEIGHT = 72;
 
 let fontPromise: Promise<void> | null = null;
@@ -60,14 +60,12 @@ export const Captions: React.FC<{captions: Caption[]}> = ({captions}) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          transform: `scale(${SCALE})`,
-          transformOrigin: `${cue.x}px ${BAND_HEIGHT / 2}px`,
         }}
       >
         <span
           style={{
             fontFamily: `'${FONT_NAME}', monospace`,
-            fontSize: BASE_PX,
+            fontSize: FONT_PX,
             lineHeight: 1,
             color: '#FFFFFF',
             whiteSpace: 'nowrap',

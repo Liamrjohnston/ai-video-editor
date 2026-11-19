@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Make the captions: turn word timings into short caption cues in the house style.
+"""Make the captions: turn word timings into short caption cues placed for each layout.
 
     make_captions.py words.json --out captions.json
     make_captions.py words.json --out captions.json --srt captions.srt --modes modes.json --fps 29.97
@@ -153,7 +153,7 @@ def main():
     ap.add_argument("--min-dur", type=float, default=0.2, help="shortest time a caption is on screen")
     a = ap.parse_args()
     if a.max_words > 3:
-        sys.exit("The house style never shows more than three words. Use --max-words 3 or less.")
+        sys.exit("Captions never show more than three words. Use --max-words 3 or less.")
     words = load_words(a.words)
     if not words:
         sys.exit("No words found in " + a.words)

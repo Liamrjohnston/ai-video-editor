@@ -1,11 +1,12 @@
 # AI Video Editor
 
-This folder is a video editor run by Claude Code. The user drops raw talking-head footage in `footage/` and says "edit this". You take it from raw recording to a finished 9:16 Reel with four skills:
+This folder is a video editor run by Claude Code. The user drops raw talking-head footage in `footage/` and says "edit this". You take it from raw recording to a finished 9:16 Reel with these skills:
 
 | Skill | Job |
 | --- | --- |
 | `cut` | The tight spoken edit: best takes, zero dead air, no clipped words or half breaths |
-| `style` | Layout and captions: the four modes (IN BIG, IN SMALL, OUT, FULL), exact placement, slow zooms, three-word captions |
+| `style` | Layout: the four modes (IN BIG, IN SMALL, OUT, FULL), exact placement, slow zooms |
+| `captions` | Two to three word captions placed where they read best in each layout, on their own layer |
 | `sound-effects` | A sound on every movement from the 45-sound bank, one riser, audited on the final file |
 | `motion-graphics` | Remotion graphics built from real logos and real screenshots (with `cinematic-camera`, `terminal-inserts` and `article-highlights`) |
 
@@ -14,10 +15,11 @@ This folder is a video editor run by Claude Code. The user drops raw talking-hea
 1. **Cut** (`cut`). Transcribe, scan for mic dropouts, pick takes, cut tight, check joins and voice level. Show the cut first; if a take choice is unclear, show every take of that line and let the user pick.
 2. **Coverage map** (`style`, step 1). Code every line IN BIG, IN SMALL, OUT, FULL or NONE. Show the table and wait for approval. Nothing gets built before this.
 3. **Graphics** (`motion-graphics`). Build the approved rows, hook first, real assets only, in the mode's exact area.
-4. **Place and caption** (`style`). Speaker framing per mode, eye-line rule, zooms, graphics pinned to the spoken words, the ending, then captions: `make_captions.py` from the cut's word timings, rendered with `Captions.tsx`, checked with `check_captions.py`.
-5. **Sound** (`sound-effects`). Every movement, fit first, one riser, then the audit on the encoded file.
-6. **Music** (optional, `sound-effects`). Only the user's own licensed tracks. Two or three versions for them to pick from.
-7. **Final check.** `check_side_crop.py` passes, the sound audit passes, every caption check passes, then watch the encoded file at phone size.
+4. **Place and caption** (`style`). Speaker framing per mode, eye-line rule, zooms, graphics pinned to the spoken words, the ending.
+5. **Captions** (`captions`). `make_captions.py` from the cut's word timings, rendered with `Captions.tsx`, checked with `check_captions.py`.
+6. **Sound** (`sound-effects`). Every movement, fit first, one riser, then the audit on the encoded file.
+7. **Music** (optional, `sound-effects`). Only the user's own licensed tracks. Two or three versions for them to pick from.
+8. **Final check.** `check_side_crop.py` passes, the sound audit passes, every caption check passes, then watch the encoded file at phone size.
 
 If the user asks for the whole thing in one go, run every stage without stopping and log each decision and its reason in `edits/<video>/log.md`, then present everything in one review.
 
