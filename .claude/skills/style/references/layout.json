@@ -1,0 +1,61 @@
+{
+  "about": "Every number for the four layout modes on a native 1080x1920 (9:16) canvas. The style skill and the editor both read this file. Pixels are measured on real phone screenshots of the Instagram full-screen Reel view.",
+  "canvas": { "width": 1080, "height": 1920 },
+  "readableSafeArea": {
+    "x": [120, 960],
+    "why": "Instagram's full-screen Reel view crops about 97 px (iPhone) to 108 px (20:9 Android) off each side. Anything someone has to read stays inside x120 to 960."
+  },
+  "IN_BIG": {
+    "what": "Half split screen. Graphic on top, speaker full width below. Every video opens here.",
+    "graphicStage": { "y": [0, 960], "importantContent": { "x": [120, 960], "y": [250, 760] }, "focusY": 565,
+      "note": "Above y250 is the phone's status area and the top app controls. Unimportant parts may fly or zoom out of the box." },
+    "seam": { "graphicSolidUntilY": 770, "graphicGoneByY": 940, "curve": "smoothstep",
+      "speakerRisesOverTopPx": 250,
+      "note": "No border or line. The graphic fades into the background surface on an eased curve, and the speaker's footage rises out of the same surface on the same curve, so the split is never seen. A linear fade leaves a visible line." },
+    "speakerPanel": { "x": [0, 1080], "top": 960, "bottom": 1920, "topCornerRadius": 84 },
+    "speaker": { "headTopY": 1060, "scaleRule": "smallest uniform scale that fills 1080 wide", "headCutout": false,
+      "note": "No head cutout in IN BIG: a hard cutout flickers around hair. The cutout fades in during the shrink to IN SMALL." },
+    "caption": { "center": [540, 962] },
+    "slowZoom": { "startPercent": 100, "ratePercentPerSec": 1.3, "capPercent": 108, "anchor": [540, 1210],
+      "note": "Footage only. Panel, fade, caption and graphic stay still. Resets to 100 at every new IN BIG stretch. Never in IN SMALL." }
+  },
+  "IN_SMALL": {
+    "what": "Graphic gets the big upper stage, speaker small in a rounded panel at the bottom.",
+    "graphicArea": { "x": [120, 960], "y": [200, 1172], "center": [540, 686], "captionClearancePx": 54 },
+    "speakerPanel": { "x": [71, 1009], "width": 938, "top": 1410, "bottom": 1925, "cornerRadius": 40,
+      "note": "71 px side margins clear the Reels-tab side crop. The bottom runs about 5 px off the frame so the panel sits on the bottom edge." },
+    "speaker": { "headTopY": 1310, "headCutoutOverlapsPanelPx": 16,
+      "scaleRule": "smallest uniform scale that still fills the 938 px panel width",
+      "measureRule": "use the MEDIAN head-top across every IN SMALL frame of the take, never one still" },
+    "caption": { "center": [540, 1262], "glyphBand": [1226, 1298], "note": "One line, just above the head." }
+  },
+  "OUT": {
+    "what": "Graphic fills the whole 9:16 frame. Speaker not visible.",
+    "readable": { "x": [120, 960], "y": [200, 1720] },
+    "caption": { "center": [540, 1489] }
+  },
+  "FULL": {
+    "what": "Speaker full screen, no motion graphic. Only on a genuine transition.",
+    "bigText": { "y": [150, 600], "leadInPx": 44, "keyWordsPx": 100, "x": [120, 960],
+      "note": "The line being said, typed on the spoken word, between the top of the frame and the hair. A soft dim of the room above the head so white type reads on a bright wall. Never a bar or box. Regular captions step aside while big text is up." },
+    "zoom": { "startPercent": 100, "ratePercentPerSec": 3, "capPercent": 106 },
+    "caption": { "center": [540, 1489] },
+    "maxSeconds": 4
+  },
+  "transitions": {
+    "IN_BIG_to_IN_SMALL": { "frames": 30, "easing": "inOut cubic",
+      "together": ["panel to the IN SMALL rect", "camera to the IN SMALL transform", "panel feather to a hard edge", "head cutout fades in at eased progress 0.2 to 0.45", "graphic re-centres to y686", "caption drops to y1262"],
+      "note": "The head breaks above the panel on the way down. Reverse it to grow back." },
+    "toOUT_whenEyesDrop": "Hard cut on or before the first frame the head starts to drop. Never slide the speaker down while they look away.",
+    "openingPullback": { "fromPercent": 110, "toPercent": 100, "seconds": 1.07, "easing": "cubic inOut",
+      "note": "Optional opening visual hook. Background, graphics and captions stay fixed." }
+  },
+  "captions": {
+    "font": "Departure Mono Regular (SIL Open Font License)",
+    "color": "#FFFFFF",
+    "effectivePx": 38.5,
+    "maxWordsVisible": 3,
+    "background": "none", "border": "none", "stroke": "none", "shadow": "none",
+    "followsCameraZoom": false
+  }
+}

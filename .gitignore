@@ -1,0 +1,9 @@
+.venv/
+footage/
+edits/
+remotion/
+node_modules/
+.motion/
+__pycache__/
+*.pyc
+.DS_Store

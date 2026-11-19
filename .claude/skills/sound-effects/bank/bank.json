@@ -1,0 +1,455 @@
+{
+ "about": "The approved sound effects bank. The mix builder only accepts files listed here, matched by sha256.",
+ "entries": [
+  {
+   "n": 1,
+   "name": "Tap",
+   "file": "sounds/001-tap.wav",
+   "sha256": "33108fe2dce7496e20e399bad0b5750456b7f2e1447fd444c20d58ea7d8de98b",
+   "type": "click",
+   "audibleSec": 0.095,
+   "description": "One dry, bright tap with no pitch.",
+   "bestJob": "A tap on screen, a single item landing in place."
+  },
+  {
+   "n": 4,
+   "name": "Double click",
+   "file": "sounds/004-double-click.wav",
+   "sha256": "01eaf14d7127cdd5f3a3c1c3c02adaa1c2ba47a3d7f7816132d1bb6c227f37ef",
+   "type": "click",
+   "audibleSec": 0.18,
+   "description": "Two dry clicks close together, like a double click.",
+   "bestJob": "A double click on a file or icon."
+  },
+  {
+   "n": 6,
+   "name": "Dry tap",
+   "file": "sounds/006-dry-tap.wav",
+   "sha256": "9e053c7ddd5ca67dbbdc7f2861473c6a4b4ca1a6e0e52b9eb2777b39f82d47c2",
+   "type": "click",
+   "audibleSec": 0.1,
+   "description": "One dry tap.",
+   "bestJob": "A light tap; a quiet alternative to #1."
+  },
+  {
+   "n": 12,
+   "name": "Crispy click",
+   "file": "sounds/012-crispy-click.wav",
+   "sha256": "36446c793f027fab723b158ca69d4d5e60497afa70fd3386a7246c986cdcaf41",
+   "type": "click",
+   "audibleSec": 0.255,
+   "description": "A crisp press and release with a short pitched tick.",
+   "bestJob": "A switch flipping, a toggle, a crisp UI press. Second choice for a mouse click."
+  },
+  {
+   "n": 14,
+   "name": "Mouse click",
+   "file": "sounds/014-mouse-click.wav",
+   "sha256": "33827aeec6bc8d2e46d23cc0c5e67506c26c4fab17256493e94a66d3c026cc3c",
+   "type": "click",
+   "audibleSec": 0.175,
+   "description": "A dry press and release.",
+   "bestJob": "A cursor clicking a button, link or menu item."
+  },
+  {
+   "n": 15,
+   "name": "Pop",
+   "file": "sounds/015-pop.wav",
+   "sha256": "65ecbe78618082b3bd37467e684be7e08d6aaa0eb6010d7b36571a8d5d66a8fc",
+   "type": "pop",
+   "audibleSec": 0.055,
+   "description": "A tiny round pop with a quick drop in pitch.",
+   "bestJob": "Something popping in with an overshoot: a badge, an icon, a puck."
+  },
+  {
+   "n": 16,
+   "name": "UI pop",
+   "file": "sounds/016-ui-pop.wav",
+   "sha256": "b9d20c10dfa737481adfb649a093acd29c249b2e1e592e0757d640ab31d7dfdf",
+   "type": "pop",
+   "audibleSec": 0.11,
+   "description": "Two small round bloops that bend up in pitch.",
+   "bestJob": "A window, menu, panel or card opening. Its two bloops fit window-then-icon."
+  },
+  {
+   "n": 17,
+   "name": "Button",
+   "file": "sounds/017-button.wav",
+   "sha256": "357df9be9bfa587d1e8b9ed989838341fae60a59b3215d0b8a8122847f1a2711",
+   "type": "press",
+   "audibleSec": 0.25,
+   "description": "A few tight clicks with a small pitched chirp.",
+   "bestJob": "A button press with a little confirmation; second choice for a window opening."
+  },
+  {
+   "n": 21,
+   "name": "Select",
+   "file": "sounds/021-select.wav",
+   "sha256": "4e35a8a21fcb47ad6d57cb73adf382eb22935a0ef28bc1bf0232bae4938fb856",
+   "type": "press",
+   "audibleSec": 0.31,
+   "description": "A soft low tone with clicks on top and a quick rising blip at the end.",
+   "bestJob": "A highlight or selection: a marker sweeping a word, an item being picked."
+  },
+  {
+   "n": 23,
+   "name": "Soft swell swoosh",
+   "file": "sounds/023-soft-swell-swoosh.wav",
+   "sha256": "ffa3e533a9ec3fa7a85fc90a982e4d597f1ef11748a917a9d40400d6841a6355",
+   "type": "swoosh",
+   "audibleSec": 0.385,
+   "description": "Soft air that swells and stops. Low and wide, no pitch.",
+   "bestJob": "A pull-back or long camera move; a reveal as something shrinks into place."
+  },
+  {
+   "n": 24,
+   "name": "Short swoosh",
+   "file": "sounds/024-short-swoosh.wav",
+   "sha256": "932579b2d2e14b470027849160a15e7af4f3d33a40cea044453def5afe1b13f2",
+   "type": "swoosh",
+   "audibleSec": 0.22,
+   "description": "Short, soft and full air. No pitch.",
+   "bestJob": "A medium camera push or zoom; peak it on the zoom's fastest frame."
+  },
+  {
+   "n": 26,
+   "name": "Air puff",
+   "file": "sounds/026-air-puff.wav",
+   "sha256": "79f17243319a498cb2b643144dfa6179975b4964212935555839b4cc65c5995a",
+   "type": "swoosh",
+   "audibleSec": 0.1,
+   "description": "A very short air puff, low and full.",
+   "bestJob": "A quick swipe, a fast glide, a short dash of the cursor."
+  },
+  {
+   "n": 28,
+   "name": "Deep whoosh",
+   "file": "sounds/028-deep-whoosh.wav",
+   "sha256": "6901eecde43989dc3ab8d2b9a967dcb1f97c8ba31b87bb4f2044d256f496254c",
+   "type": "swoosh",
+   "audibleSec": 0.76,
+   "description": "A low, round air swell that rises and falls. Mostly low end, so it is weak on a phone speaker.",
+   "bestJob": "A big slow move on a speaker with real low end. Weak on phone speakers, so use sparingly."
+  },
+  {
+   "n": 35,
+   "name": "Typing key",
+   "file": "sounds/035-typing-key.wav",
+   "sha256": "a2251e78504a5295c8561cce94578184b0b594eeb377c932d96bcd65ba3768d9",
+   "type": "typing",
+   "audibleSec": 0.105,
+   "description": "A single soft key press.",
+   "bestJob": "Typing, one hit per visible keystroke, quiet under the voice and at least 6 frames apart."
+  },
+  {
+   "n": 39,
+   "name": "Charge-up riser",
+   "file": "sounds/039-charge-up-riser.wav",
+   "sha256": "4b02f0c6eb3cd8c90835f2406f468057128acc036c64595c4e60e274f2a78cb7",
+   "type": "riser",
+   "audibleSec": 2.42,
+   "description": "A noise wash with a thin whistle sliding slowly upward the whole way. Sci-fi feel.",
+   "bestJob": "The one riser: the build from the hook into the main point."
+  },
+  {
+   "n": 40,
+   "name": "Charge-up with taps",
+   "file": "sounds/040-charge-up-with-taps.wav",
+   "sha256": "a0ec87dc04a4d7bb149a4069e7aa060d5ea41e115014004cfa31f9229b59031c",
+   "type": "riser",
+   "audibleSec": 1.845,
+   "description": "A thin rising whistle over noise with ticks on it, then five separate clicks at the end. Sci-fi feel.",
+   "bestJob": "Riser alternative with a clicky landing. Only as the one riser."
+  },
+  {
+   "n": 41,
+   "name": "Noise riser",
+   "file": "sounds/041-noise-riser.wav",
+   "sha256": "65bc05fd59593526a695d548f91689a028da5215fb16c2637585e1ef26511229",
+   "type": "riser",
+   "audibleSec": 3.525,
+   "description": "A dense noise and low rumble build for about 2 seconds, then a low tail.",
+   "bestJob": "The default riser: the build from the hook into the main point."
+  },
+  {
+   "n": 44,
+   "name": "Reverse crash",
+   "file": "sounds/044-reverse-crash.wav",
+   "sha256": "fb5247627d729fb89309e8849b7b7741e8db31f9b0b1ebf55ac4fa9144d67e3b",
+   "type": "riser",
+   "audibleSec": 1.73,
+   "description": "A cymbal crash played backwards, swelling and cutting off.",
+   "bestJob": "Riser alternative: a reverse crash swelling into the cut. Only as the one riser."
+  },
+  {
+   "n": 45,
+   "name": "Shutter",
+   "file": "sounds/045-shutter.wav",
+   "sha256": "e09cf161869f6006a48c6c032ac991a82257668e8f8b108e7083fbb45f20c303",
+   "type": "camera",
+   "audibleSec": 0.32,
+   "description": "A short dry noise burst, then a smaller second click.",
+   "bestJob": "A screenshot or capture being taken."
+  },
+  {
+   "n": 47,
+   "name": "Bright shutter",
+   "file": "sounds/047-bright-shutter.wav",
+   "sha256": "4b2a926fa498972c338546052eaf5973553666c0d6089f9378dab8b8184b0c9a",
+   "type": "camera",
+   "audibleSec": 0.245,
+   "description": "A bright noise burst with a thin high whine on top.",
+   "bestJob": "A bright capture moment; a photo or frame snapping in."
+  },
+  {
+   "n": 54,
+   "name": "Camera shutter click",
+   "file": "sounds/054-camera-shutter-click.mp3",
+   "sha256": "46038b4057282a7a1818b2a3a6e099834b9e48546fbe688bcd4b8baabc72f297",
+   "type": "camera",
+   "audibleSec": 0.305,
+   "description": "A softer first click, then a bright second click.",
+   "bestJob": "A screenshot with a two-step click."
+  },
+  {
+   "n": 55,
+   "name": "DSLR click",
+   "file": "sounds/055-dslr-click.mp3",
+   "sha256": "0280ed268d9221b72d307591829ab79864be845f3748aef341f62aefd744005b",
+   "type": "camera",
+   "audibleSec": 0.145,
+   "description": "One quick double shutter click.",
+   "bestJob": "A quick capture; frames freezing into a still."
+  },
+  {
+   "n": 58,
+   "name": "Shutter burst",
+   "file": "sounds/058-shutter-burst.mp3",
+   "sha256": "68a6681a6c43205d7dc43d46ba2b6f4899ed721b46fa8d78b61fee4c95d977b4",
+   "type": "camera",
+   "audibleSec": 0.25,
+   "description": "Four shutter clicks with a ringing metallic tail.",
+   "bestJob": "A burst of captures, several stills in a row."
+  },
+  {
+   "n": 61,
+   "name": "Flicker fast",
+   "file": "sounds/061-flicker-fast.wav",
+   "sha256": "44eddbb1dbf98f289b9ad87d03c36917bf312a4fbf921c33e12b915886a616d5",
+   "type": "sequence",
+   "audibleSec": 0.2,
+   "description": "Four very fast clicks, like a light flickering.",
+   "bestJob": "Something flickering on: a light, a screen waking up."
+  },
+  {
+   "n": 63,
+   "name": "Flicker whine",
+   "file": "sounds/063-flicker-whine.wav",
+   "sha256": "7e833703eff53c462ee583b2c4bc0a2e97fcabb07c062fb142600600ef4dad5b",
+   "type": "sequence",
+   "audibleSec": 0.565,
+   "description": "Four fast clicks with a high whine running across them and a noise tail.",
+   "bestJob": "A screen powering on with a whine; a glitchy reveal."
+  },
+  {
+   "n": 64,
+   "name": "Flicker three",
+   "file": "sounds/064-flicker-three.wav",
+   "sha256": "3ca09b79e2502fdf34a3ed8b0e18685ed7ab88c88d96e6af912275b19f739141",
+   "type": "sequence",
+   "audibleSec": 0.26,
+   "description": "Three fast dry clicks.",
+   "bestJob": "Three quick items appearing in a row."
+  },
+  {
+   "n": 68,
+   "name": "Flicker four",
+   "file": "sounds/068-flicker-four.wav",
+   "sha256": "d86b9d1086ab8a226cb2b381e208ee988f0f973a988bbde8fd8fdeeb7dd6d093",
+   "type": "sequence",
+   "audibleSec": 0.18,
+   "description": "Four very fast clicks.",
+   "bestJob": "Four quick items appearing in a row."
+  },
+  {
+   "n": 73,
+   "name": "Counter run",
+   "file": "sounds/073-counter-run.wav",
+   "sha256": "695e9ca3d2b4fee0e9ae18f088550d39bf8440ea9b84d4cedb130a6e7cea0228",
+   "type": "sequence",
+   "audibleSec": 1.15,
+   "description": "A long fast ticking run (about 20 ticks) with a steady high tone over it, like a counter.",
+   "bestJob": "A counter or number climbing; a progress bar filling."
+  },
+  {
+   "n": 74,
+   "name": "Speed-up run",
+   "file": "sounds/074-speed-up-run.wav",
+   "sha256": "052ba8e0df36e941498817df96ada9b2e1b12390ac05c678b63b002cbe2d3acd",
+   "type": "sequence",
+   "audibleSec": 1.45,
+   "description": "A fast ticking run that speeds up and ends on a hit. Bright and busy.",
+   "bestJob": "Something speeding up and landing on a result."
+  },
+  {
+   "n": 77,
+   "name": "8-bit chatter",
+   "file": "sounds/077-8-bit-chatter.wav",
+   "sha256": "f792db34af3234b138fe7a2203f0d035101e835293be9d8bfcc8bdeefaf3b4d1",
+   "type": "sequence",
+   "audibleSec": 2.37,
+   "description": "Buzzy game-style chatter, about 36 quick blips.",
+   "bestJob": "An agent or chat 'thinking'; rapid machine chatter. Use once at most."
+  },
+  {
+   "n": 78,
+   "name": "Digital text",
+   "file": "sounds/078-digital-text.wav",
+   "sha256": "3bd59ebc0cfb6503bc5a86d2e43da037721ae65f266b693ea100ac589772737d",
+   "type": "sequence",
+   "audibleSec": 0.715,
+   "description": "A stream of about 12 crackly noise ticks with a faint tone.",
+   "bestJob": "A stream of text or data scrolling in."
+  },
+  {
+   "n": 83,
+   "name": "Digital blips",
+   "file": "sounds/083-digital-blips.wav",
+   "sha256": "063fc077d247333e8fd75785c9b5e08e50da19d7d2bff8a2aaaa143a7a65d4ff",
+   "type": "blip",
+   "audibleSec": 0.315,
+   "description": "Three short bright blips, each with a small high pitched tick on top.",
+   "bestJob": "Three items lighting up in turn."
+  },
+  {
+   "n": 84,
+   "name": "Digital blip",
+   "file": "sounds/084-digital-blip.wav",
+   "sha256": "237b1b836a968b0418794c77019daf3319f990a43f6d5d46d4b2118c151bc110",
+   "type": "blip",
+   "audibleSec": 0.06,
+   "description": "One short bright blip with a small high pitched tick on top. One hit cut from #83.",
+   "bestJob": "One item lighting up or being read; a status changing."
+  },
+  {
+   "n": 89,
+   "name": "Night vision sweep",
+   "file": "sounds/089-night-vision-sweep.wav",
+   "sha256": "ff5982e969e0f82b83a35ca112634bf24ed0ac3093c98c13cb33a919a2d2dc06",
+   "type": "sweep",
+   "audibleSec": 1.51,
+   "description": "A quick click, then a pitched whine that drops and then holds high. Sci-fi.",
+   "bestJob": "A scan, a vision mode switching on; a sci-fi reveal. Use once at most."
+  },
+  {
+   "n": 94,
+   "name": "Chime",
+   "file": "sounds/094-chime.wav",
+   "sha256": "24239effeec92aae530a1e6c3943620b20614e0af9af0e22a7b1e979b85987bb",
+   "type": "tonal",
+   "audibleSec": 0.605,
+   "description": "Bright high ringing tones stacked together, with a soft low pulse under them.",
+   "bestJob": "A success moment. Use rarely; most chimes sound cheap."
+  },
+  {
+   "n": 102,
+   "name": "Soft cut tick",
+   "file": "sounds/102-soft-cut-tick.wav",
+   "sha256": "8d1301ea44ac2aa64ef30314f737fd5680181b2dbf429b79f220b8b7c71401db",
+   "type": "tick",
+   "audibleSec": 0.015,
+   "description": "A tiny tick with a faint pitch.",
+   "bestJob": "A caption or label appearing; a soft hard-cut tick."
+  },
+  {
+   "n": 104,
+   "name": "Tiny click A",
+   "file": "sounds/104-tiny-click-a.ogg",
+   "sha256": "adcd1f4adc35f1b41bc1b5bbefeff7aa44f2f3f0d96d3199b544140c7c1e761c",
+   "type": "tick",
+   "audibleSec": 0.01,
+   "description": "A tiny tick, 10 ms.",
+   "bestJob": "A tiny tick for a small label or line appearing."
+  },
+  {
+   "n": 105,
+   "name": "Tiny click B",
+   "file": "sounds/105-tiny-click-b.ogg",
+   "sha256": "2fa929138bc3a0f432696588f66eac94b8f6d463905ec8808c6461ce4b054292",
+   "type": "tick",
+   "audibleSec": 0.01,
+   "description": "A tiny tick, 10 ms.",
+   "bestJob": "A line of text appearing in a terminal or chat."
+  },
+  {
+   "n": 108,
+   "name": "Bright tick",
+   "file": "sounds/108-bright-tick.ogg",
+   "sha256": "9d057b918024c787bbe6c00beed13a7ef72a3fa0c259add3cef36582792f4230",
+   "type": "tick",
+   "audibleSec": 0.015,
+   "description": "A tiny bright tick.",
+   "bestJob": "A line of text appearing in a terminal or chat; a bright tiny tick."
+  },
+  {
+   "n": 110,
+   "name": "Switch press",
+   "file": "sounds/110-switch-press.wav",
+   "sha256": "c9a06d1a405c7c7c7b813c82399bda8f2ba0a1e708c34bf0252382fe024fb508",
+   "type": "press",
+   "audibleSec": 0.14,
+   "description": "Press and release, two small clicks each with a short low knock.",
+   "bestJob": "Something switching off or powering down; a press with a knock."
+  },
+  {
+   "n": 111,
+   "name": "Switch toggle",
+   "file": "sounds/111-switch-toggle.wav",
+   "sha256": "1798f5a6bf22a73045bd70c85d6b906e16a798917e4ae74b2db6bcad1d05fb3c",
+   "type": "press",
+   "audibleSec": 0.14,
+   "description": "Press and release, two small clicks each with a short pitched blip.",
+   "bestJob": "A toggle flipping on."
+  },
+  {
+   "n": 128,
+   "name": "Scroll run",
+   "file": "sounds/128-scroll-run.ogg",
+   "sha256": "6fbcda22bc45349c66f1ba4b56d6c211b12264e83667de4b9af1e4ffcef74be5",
+   "type": "sequence",
+   "audibleSec": 1.0,
+   "description": "19 soft low clicks over a second.",
+   "bestJob": "Cards or items sliding out in a row; a list scrolling."
+  },
+  {
+   "n": 136,
+   "name": "Drop bloop",
+   "file": "sounds/136-drop-bloop.ogg",
+   "sha256": "692ee3a6f1821402ca649ff735bee9591dc4846c8098fc7d6a90fd15fa57c1af",
+   "type": "blip",
+   "audibleSec": 0.115,
+   "description": "A bright synth bloop that bends up fast.",
+   "bestJob": "Something dropping in and landing softly; a small arrival."
+  },
+  {
+   "n": 172,
+   "name": "Pulse rise",
+   "file": "sounds/172-pulse-rise.ogg",
+   "sha256": "f050b3bb77cb0b901bc8df43d2cc1872c353aebae10b4030cf8ae681726ad343",
+   "type": "sweep",
+   "audibleSec": 0.37,
+   "description": "A low synth tone pulsing six times as it slowly rises.",
+   "bestJob": "A slow rise or power-up on one element (and its reverse for the way back)."
+  },
+  {
+   "n": 200,
+   "name": "Glitch crackle",
+   "file": "sounds/200-glitch-crackle.ogg",
+   "sha256": "d0f4db4d12f88592bc328bd621d356d099eaa2dda37bab37a6cf17891c5026d1",
+   "type": "other",
+   "audibleSec": 0.02,
+   "description": "A tiny digital crackle with a faint pitch.",
+   "bestJob": "A single terminal line glitching in. Never on a list, where repeated crackles sound broken."
+  }
+ ]
+}
